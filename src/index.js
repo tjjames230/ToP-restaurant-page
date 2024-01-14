@@ -1,1 +1,3 @@
-console.log("hi");
+import { addContent } from "./modules/addContent.js";
+
+addContent();
