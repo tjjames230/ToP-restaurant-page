@@ -3,5 +3,11 @@ export { loadHome };
 const main = document.querySelector("#main");
 
 function loadHome() {
-  console.log("hi from home");
+  homeContent();
+}
+
+function homeContent() {
+  const headerOne = document.createElement("h1");
+  headerOne.textContent = "Welcome to OUR RESTAURANT!";
+  main.appendChild(headerOne);
 }
