@@ -7,10 +7,13 @@ const aside = document.querySelector("#aside");
 function init() {
   // styling body
   styleBody();
+
   // function to handle content creation and styling for aside
   createAside();
+
   // function to handle content creation and styling for main (home)
   createMain();
+
   // function from home.js to load home content
   loadHome();
 }
@@ -20,6 +23,7 @@ function styleBody() {
   body.style.display = "flex";
   body.style.margin = "0";
   body.style.padding = "0";
+  body.style.fontFamily = "Arial";
 }
 
 function createAside() {
@@ -29,9 +33,10 @@ function createAside() {
     aside.style.flexDirection = "column";
     aside.style.gap = "15px";
     aside.style.alignItems = "center";
-    aside.style.marginTop = "50px";
     aside.style.width = "20%";
     aside.style.height = "100vh";
+    aside.style.minWidth = "275px";
+    aside.style.padding = "50px";
   })();
 
   // IIFE for adding content
@@ -52,7 +57,7 @@ function createAside() {
   function btnStyle(btn) {
     btn.style.padding = "15px 35px";
     btn.style.border = "none";
-    btn.style.width = "75%";
+    btn.style.width = "100%";
   }
 }
 
@@ -60,5 +65,9 @@ function createMain() {
   main.style.backgroundColor = "#cccccc";
   main.style.height = "100vh";
   main.style.width = "80%";
-  main.style.paddingTop = "50px";
+  main.style.padding = "50px";
+  main.style.display = "flex";
+  main.style.flexDirection = "column";
+  main.style.gap = "15px";
+  main.style.alignItems = "center";
 }

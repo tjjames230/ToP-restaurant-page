@@ -46,7 +46,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   loadHome: () => (/* binding */ loadHome)\n/* harmony export */ });\n\r\n\r\nconst main = document.querySelector(\"#main\");\r\n\r\nfunction loadHome() {\r\n  homeContent();\r\n}\r\n\r\nfunction homeContent() {\r\n  const headerOne = document.createElement(\"h1\");\r\n  headerOne.textContent = \"Welcome to OUR RESTAURANT!\";\r\n  main.appendChild(headerOne);\r\n}\r\n\n\n//# sourceURL=webpack://top-restaurant-page/./src/modules/home.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   loadHome: () => (/* binding */ loadHome)\n/* harmony export */ });\n/* harmony import */ var _assets_images_food_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../assets/images/food.jpg */ \"./src/assets/images/food.jpg\");\n\r\n\r\n\r\nconst main = document.querySelector(\"#main\");\r\n\r\nfunction loadHome() {\r\n  main.innerHTML = \"\";\r\n  homeContent();\r\n}\r\n\r\nfunction homeContent() {\r\n  // creating/styling h1\r\n  (function () {\r\n    const headerOne = document.createElement(\"h1\");\r\n    headerOne.textContent = \"Welcome to OUR RESTAURANT!\";\r\n    headerOne.style.margin = \"0\";\r\n    main.appendChild(headerOne);\r\n  })();\r\n\r\n  //creating/styling image\r\n  (function () {\r\n    const img = document.createElement(\"img\");\r\n    img.src = _assets_images_food_jpg__WEBPACK_IMPORTED_MODULE_0__;\r\n    main.appendChild(img);\r\n  })();\r\n}\r\n\n\n//# sourceURL=webpack://top-restaurant-page/./src/modules/home.js?");
 
 /***/ }),
 
@@ -56,7 +56,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   init: () => (/* binding */ init)\n/* harmony export */ });\n/* harmony import */ var _home_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./home.js */ \"./src/modules/home.js\");\n\r\n\r\n\r\nconst main = document.querySelector(\"#main\");\r\nconst aside = document.querySelector(\"#aside\");\r\n\r\nfunction init() {\r\n  // styling body\r\n  styleBody();\r\n  // function to handle content creation and styling for aside\r\n  createAside();\r\n  // function to handle content creation and styling for main (home)\r\n  createMain();\r\n  // function from home.js to load home content\r\n  (0,_home_js__WEBPACK_IMPORTED_MODULE_0__.loadHome)();\r\n}\r\n\r\nfunction styleBody() {\r\n  const body = document.querySelector(\"body\");\r\n  body.style.display = \"flex\";\r\n  body.style.margin = \"0\";\r\n  body.style.padding = \"0\";\r\n}\r\n\r\nfunction createAside() {\r\n  //IIFE for styling aside\r\n  (function () {\r\n    aside.style.display = \"flex\";\r\n    aside.style.flexDirection = \"column\";\r\n    aside.style.gap = \"15px\";\r\n    aside.style.alignItems = \"center\";\r\n    aside.style.marginTop = \"50px\";\r\n    aside.style.width = \"20%\";\r\n    aside.style.height = \"100vh\";\r\n  })();\r\n\r\n  // IIFE for adding content\r\n  (function () {\r\n    function createBtn(text) {\r\n      const btn = document.createElement(\"button\");\r\n      btn.textContent = text;\r\n      btnStyle(btn);\r\n      aside.appendChild(btn);\r\n    }\r\n\r\n    createBtn(\"Home\");\r\n    createBtn(\"About\");\r\n    createBtn(\"Contact\");\r\n  })();\r\n\r\n  // IIFE for adding styling, which is called during creation\r\n  function btnStyle(btn) {\r\n    btn.style.padding = \"15px 35px\";\r\n    btn.style.border = \"none\";\r\n    btn.style.width = \"75%\";\r\n  }\r\n}\r\n\r\nfunction createMain() {\r\n  main.style.backgroundColor = \"#cccccc\";\r\n  main.style.height = \"100vh\";\r\n  main.style.width = \"80%\";\r\n  main.style.paddingTop = \"50px\";\r\n}\r\n\n\n//# sourceURL=webpack://top-restaurant-page/./src/modules/init.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   init: () => (/* binding */ init)\n/* harmony export */ });\n/* harmony import */ var _home_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./home.js */ \"./src/modules/home.js\");\n\r\n\r\n\r\nconst main = document.querySelector(\"#main\");\r\nconst aside = document.querySelector(\"#aside\");\r\n\r\nfunction init() {\r\n  // styling body\r\n  styleBody();\r\n\r\n  // function to handle content creation and styling for aside\r\n  createAside();\r\n\r\n  // function to handle content creation and styling for main (home)\r\n  createMain();\r\n\r\n  // function from home.js to load home content\r\n  (0,_home_js__WEBPACK_IMPORTED_MODULE_0__.loadHome)();\r\n}\r\n\r\nfunction styleBody() {\r\n  const body = document.querySelector(\"body\");\r\n  body.style.display = \"flex\";\r\n  body.style.margin = \"0\";\r\n  body.style.padding = \"0\";\r\n  body.style.fontFamily = \"Arial\";\r\n}\r\n\r\nfunction createAside() {\r\n  //IIFE for styling aside\r\n  (function () {\r\n    aside.style.display = \"flex\";\r\n    aside.style.flexDirection = \"column\";\r\n    aside.style.gap = \"15px\";\r\n    aside.style.alignItems = \"center\";\r\n    aside.style.width = \"20%\";\r\n    aside.style.height = \"100vh\";\r\n    aside.style.minWidth = \"275px\";\r\n    aside.style.padding = \"50px\";\r\n  })();\r\n\r\n  // IIFE for adding content\r\n  (function () {\r\n    function createBtn(text) {\r\n      const btn = document.createElement(\"button\");\r\n      btn.textContent = text;\r\n      btnStyle(btn);\r\n      aside.appendChild(btn);\r\n    }\r\n\r\n    createBtn(\"Home\");\r\n    createBtn(\"About\");\r\n    createBtn(\"Contact\");\r\n  })();\r\n\r\n  // IIFE for adding styling, which is called during creation\r\n  function btnStyle(btn) {\r\n    btn.style.padding = \"15px 35px\";\r\n    btn.style.border = \"none\";\r\n    btn.style.width = \"100%\";\r\n  }\r\n}\r\n\r\nfunction createMain() {\r\n  main.style.backgroundColor = \"#cccccc\";\r\n  main.style.height = \"100vh\";\r\n  main.style.width = \"80%\";\r\n  main.style.padding = \"50px\";\r\n  main.style.display = \"flex\";\r\n  main.style.flexDirection = \"column\";\r\n  main.style.gap = \"15px\";\r\n  main.style.alignItems = \"center\";\r\n}\r\n\n\n//# sourceURL=webpack://top-restaurant-page/./src/modules/init.js?");
+
+/***/ }),
+
+/***/ "./src/assets/images/food.jpg":
+/*!************************************!*\
+  !*** ./src/assets/images/food.jpg ***!
+  \************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"25cc36d4375204452d88.jpg\";\n\n//# sourceURL=webpack://top-restaurant-page/./src/assets/images/food.jpg?");
 
 /***/ })
 
@@ -99,6 +109,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -113,6 +135,29 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src;
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) {
+/******/ 					var i = scripts.length - 1;
+/******/ 					while (i > -1 && !scriptUrl) scriptUrl = scripts[i--].src;
+/******/ 				}
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	})();
 /******/ 	
 /************************************************************************/
