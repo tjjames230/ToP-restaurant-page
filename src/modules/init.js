@@ -54,11 +54,23 @@ function createAside() {
       }
     }
 
+    function btnHover() {
+      this.style.backgroundColor = "red";
+      this.style.cursor = "pointer";
+    }
+
+    function btnHoverRemove() {
+      this.style.backgroundColor = "lightgray";
+    }
+
     function createBtn(text) {
       const btn = document.createElement("button");
       btn.textContent = text;
-      btn.addEventListener("click", btnEvent);
       btnStyle(btn);
+      btn.addEventListener("click", btnEvent);
+      btn.addEventListener("mouseover", btnHover);
+      btn.addEventListener("mouseleave", btnHoverRemove);
+
       aside.appendChild(btn);
     }
 
@@ -72,6 +84,7 @@ function createAside() {
     btn.style.padding = "15px 35px";
     btn.style.border = "none";
     btn.style.width = "100%";
+    btn.style.backgroundColor = "lightgray";
   }
 }
 
