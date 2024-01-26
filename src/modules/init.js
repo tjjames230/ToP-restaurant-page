@@ -1,5 +1,7 @@
 export { init };
 import { loadHome } from "./home.js";
+import { loadAbout } from "./about.js";
+import { loadContact } from "./contact.js";
 
 const main = document.querySelector("#main");
 const aside = document.querySelector("#aside");
@@ -39,11 +41,23 @@ function createAside() {
     aside.style.padding = "50px";
   })();
 
-  // IIFE for adding content
+  // IIFE for adding content & event listener
   (function () {
+    function btnEvent() {
+      const btnText = this.textContent;
+      if (btnText === "Home") {
+        loadHome();
+      } else if (btnText === "About") {
+        loadAbout();
+      } else if (btnText === "Contact") {
+        loadContact();
+      }
+    }
+
     function createBtn(text) {
       const btn = document.createElement("button");
       btn.textContent = text;
+      btn.addEventListener("click", btnEvent);
       btnStyle(btn);
       aside.appendChild(btn);
     }

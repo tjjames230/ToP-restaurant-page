@@ -3,5 +3,8 @@ export { loadContact };
 const main = document.querySelector("#main");
 
 function loadContact() {
-  console.log("hi from contact");
+  main.innerHTML = "";
+  contactContent();
 }
+
+function contactContent() {}
