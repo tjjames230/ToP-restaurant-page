@@ -35,14 +35,26 @@ function contactContent() {
       childDiv.style.lineHeight = "1";
 
       //Add Name
-      function addText(text) {
+      (function () {
         const p = document.createElement("p");
-        p.textContent = text;
+        p.textContent = fullName;
         childDiv.appendChild(p);
-      }
-      addText(fullName);
-      addText(phone);
-      addText(blurb);
+      })(fullName);
+
+      //Add Phone
+      (function () {
+        const p = document.createElement("p");
+        p.textContent = phone;
+        childDiv.appendChild(p);
+      })(phone);
+
+      //Add blurb
+      (function () {
+        const p = document.createElement("p");
+        p.textContent = blurb;
+        childDiv.appendChild(p);
+      })(blurb);
+
       parentDiv.appendChild(childDiv);
     }
 
