@@ -17,7 +17,7 @@ function init() {
   createMain();
 
   // function from home.js to load home content
-  loadHome();
+  loadContact();
 }
 
 function styleBody() {
@@ -26,6 +26,7 @@ function styleBody() {
   body.style.margin = "0";
   body.style.padding = "0";
   body.style.fontFamily = "Arial";
+  body.style.height = "100vh";
 }
 
 function createAside() {
@@ -36,7 +37,6 @@ function createAside() {
     aside.style.gap = "15px";
     aside.style.alignItems = "center";
     aside.style.width = "20%";
-    aside.style.height = "100vh";
     aside.style.minWidth = "275px";
     aside.style.padding = "50px";
   })();
@@ -77,7 +77,6 @@ function createAside() {
 
 function createMain() {
   main.style.backgroundColor = "#cccccc";
-  main.style.height = "100vh";
   main.style.width = "80%";
   main.style.padding = "50px";
   main.style.display = "flex";
