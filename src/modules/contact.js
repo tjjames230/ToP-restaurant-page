@@ -19,39 +19,52 @@ function contactContent() {
   // create contact text
   (function () {
     const parentDiv = document.createElement("div");
-    parentDiv.style.backgroundColor = "red";
     parentDiv.style.display = "flex";
     parentDiv.style.maxWidth = "500px";
     parentDiv.style.gap = "25px";
     parentDiv.style.flexDirection = "column";
 
     function createChildDiv(fullName, phone, blurb) {
+      // Create and style each contact card
       const childDiv = document.createElement("div");
       childDiv.style.display = "flex";
       childDiv.style.flexDirection = "column";
-      childDiv.style.backgroundColor = "gray";
+      childDiv.style.background = "hsla(0, 0%, 100%, 80%)";
+      childDiv.style.borderRadius = "10px";
       childDiv.style.textAlign = "center";
-      childDiv.style.padding = "0 25px";
+      childDiv.style.padding = "20px";
+      childDiv.style.gap = "15px";
       childDiv.style.lineHeight = "1";
+
+      const nameCtn = document.createElement("div");
+      nameCtn.style.display = "flex";
+      nameCtn.style.width = "100%";
+      nameCtn.style.justifyContent = "space-around";
+      childDiv.appendChild(nameCtn);
 
       //Add Name
       (function () {
         const p = document.createElement("p");
         p.textContent = fullName;
-        childDiv.appendChild(p);
+        p.style.fontWeight = "700";
+        p.style.margin = "0";
+        nameCtn.appendChild(p);
       })(fullName);
 
       //Add Phone
       (function () {
         const p = document.createElement("p");
         p.textContent = phone;
-        childDiv.appendChild(p);
+        p.style.margin = "0";
+        nameCtn.appendChild(p);
       })(phone);
 
       //Add blurb
       (function () {
         const p = document.createElement("p");
         p.textContent = blurb;
+        p.style.fontSize = "14px";
+        p.style.margin = "0";
         childDiv.appendChild(p);
       })(blurb);
 
